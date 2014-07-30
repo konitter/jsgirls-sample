@@ -27,6 +27,11 @@
 - メニューボタンのクリックでの開閉
 - スライドアニメーションをCSSの``transition``プロパティで実現
 - ``transform``プロパティの``translateX``の値を操作
+- ``transform: translateZ(0)``によりハードウェア・アクセラレーションを有効化しスムーズにアニメーションさせる
+	- 【参考】 [Web制作にGPU処理を取り入れる｜Web制作 W3G](https://w3g.jp/blog/studies/web_gpu_adopt)
+	- 【参考】 [Webアニメーションを高速化するために知っておくべき10のこと（前編） | HTML5Experts.jp](http://html5experts.jp/cssradar/2027/)
+	- 【参考】 [スムーズなアニメーションを実装するコツと仕組みを説明するよ。CPUとGPUを理解しハードウェアアクセラレーションを駆使するのだ！（Frontrend Advent Calendar 2013 – 06日目） | Ginpen.com](http://ginpen.com/2013/12/06/hardware-acceleration/)
+	- 【参考】 [Dev.Opera — CSS will-changeプロパティについて知っておくべきこと](http://dev.opera.com/articles/ja/css-will-change-property/)
 - スライドアニメーションはIE10以上で動作、一部ブラウザでは``transition``プロパティ（[参照：Can I use](http://caniuse.com/#feat=css-transitions)）および``transform``プロパティ（[参照：Can I use](http://caniuse.com/#feat=transforms2d)）に``-webkit-``プレフィックスが必要
 
 ### パターン4
