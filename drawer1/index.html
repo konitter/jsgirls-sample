@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>JS Girls</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Yeseva+One">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/drawer.css">
+</head>
+<body>
+<div id="content">
+	<header id="header">
+		<h1><a href="/">JS Girls</a></h1>
+		<nav id="navigation">
+			<ul>
+				<li><a href="http://jsgirls.org/events/">Events</a></li>
+				<li><a href="http://jsgirls.org/materials/">Materials</a></li>
+				<li><a href="http://blog.jsgirls.org/">Blog</a></li>
+				<li><a href="https://www.facebook.com/jsgirls">Facebook</a></li>
+				<li><a href="https://twitter.com/girlsjs">Twitter</a></li>
+			</ul>
+		</nav>
+		<button id="toggle-menu" type="button"><span id="toggle-menu-icon"></span></button>
+	</header>
+	<main id="main">
+		<img src="img/osaka-201407.jp" alt="JS Girls" width="500" height="500">
+	</main>
+	<footer id="contentinfo">
+		<small>&copy; JS Girls</small>
+	</footer>
+</div>
+<div id="drawer">
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="http://jsgirls.org/events/">Events</a></li>
+		<li><a href="http://jsgirls.org/materials/">Materials</a></li>
+		<li><a href="http://blog.jsgirls.org/">Blog</a></li>
+		<li><a href="https://www.facebook.com/jsgirls">Facebook</a></li>
+		<li><a href="https://twitter.com/girlsjs">Twitter</a></li>
+	</ul>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+$(function() {
+	// ドロワーメニューのパーツは事前に変数化しておく
+	var $body    = $('body');
+	var $content = $('#content');
+	var $drawer  = $('#drawer');
+	var $menuBtn = $('#toggle-menu');
+
+	// メニューボタンのクリックでドロワーを開閉する
+	$menuBtn.on('click', function(event) {
+		// メニューボタンの動作を無効化
+		event.preventDefault();
+
+		// ドロワーが開いているとき（＝bodyがクラス[is-open]を持っているとき）
+		// ドロワーを閉じる処理をここに書く
+		if ($body.hasClass('is-open')) {
+			// bodyからクラス[is-open]を取る
+			$body.removeClass('is-open');
+
+			// contentを400ミリ秒かけてleftを0にして元の位置に戻す
+			$content.animate({
+				left: 0
+			}, 400);
+
+			// drawerを400ミリ秒かけてrightを-260pxにして元の位置に戻す
+			$drawer.animate({
+				right: '-260px'
+			}, 400);
+
+		// ドロワーが閉じているとき（＝bodyがクラス[is-open]を持っていないとき）
+		// ドロワーを開く処理をここに書く
+		} else {
+			// bodyにクラス[is-open]を付ける
+			$body.addClass('is-open');
+
+			// contentを400ミリ秒かけてleftを-260pxにしてドロワーの幅だけ左にずらす
+			$content.animate({
+				left: '-260px'
+			}, 400);
+
+			// drawerを400ミリ秒かけてrightを0にしてドロワーを開く
+			$drawer.animate({
+				right: 0
+			}, 400);
+		}
+
+	});
+});
+</script>
+</body>
+</html>
