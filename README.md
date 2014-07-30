@@ -4,7 +4,7 @@
 
 ### パターン1
 
-demo
+[demo](http://re-dzine.net/jsgirls-sample/drawer1/)
 
 - メニューボタンのクリックでの開閉
 - スライドアニメーションをjQueryの``animate()``で実現
@@ -13,7 +13,7 @@ demo
 
 ### パターン2
 
-demo
+[demo](http://re-dzine.net/jsgirls-sample/drawer2/)
 
 - メニューボタンのクリックでの開閉
 - スライドアニメーションをCSSの``transition``プロパティで実現
@@ -22,7 +22,7 @@ demo
 
 ### パターン3
 
-demo
+[demo](http://re-dzine.net/jsgirls-sample/drawer3/)
 
 - メニューボタンのクリックでの開閉
 - スライドアニメーションをCSSの``transition``プロパティで実現
@@ -31,7 +31,7 @@ demo
 
 ### パターン4
 
-demo
+[demo](http://re-dzine.net/jsgirls-sample/drawer4/)
 
 - パターン3のプラスアルファ版
 - ドロワーの開閉にタッチイベントを使うことでスマホなどタッチデバイスにおける操作をより快適に
@@ -39,6 +39,6 @@ demo
 
 ### パターン5
 
-demo
+[demo](http://re-dzine.net/jsgirls-sample/drawer5/)
 
 - パターン4をjQueryを使わずに書いたもの
