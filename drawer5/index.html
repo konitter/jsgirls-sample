@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>JS Girls</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Yeseva+One">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/drawer.css">
+</head>
+<body>
+<div id="content">
+	<header id="header">
+		<h1><a href="/">JS Girls</a></h1>
+		<nav id="navigation">
+			<ul>
+				<li><a href="http://jsgirls.org/events/">Events</a></li>
+				<li><a href="http://jsgirls.org/materials/">Materials</a></li>
+				<li><a href="http://blog.jsgirls.org/">Blog</a></li>
+				<li><a href="https://www.facebook.com/jsgirls">Facebook</a></li>
+				<li><a href="https://twitter.com/girlsjs">Twitter</a></li>
+			</ul>
+		</nav>
+		<button id="toggle-menu" type="button"><span id="toggle-menu-icon"></span></button>
+	</header>
+	<main id="main">
+		<img src="img/osaka-201407.jpg" alt="JS Girls" width="500" height="500">
+	</main>
+	<footer id="contentinfo">
+		<small>&copy; JS Girls</small>
+	</footer>
+</div>
+<div id="drawer">
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="http://jsgirls.org/events/">Events</a></li>
+		<li><a href="http://jsgirls.org/materials/">Materials</a></li>
+		<li><a href="http://blog.jsgirls.org/">Blog</a></li>
+		<li><a href="https://www.facebook.com/jsgirls">Facebook</a></li>
+		<li><a href="https://twitter.com/girlsjs">Twitter</a></li>
+	</ul>
+</div>
+<script>
+(function() {
+	'use strict';
+
+	var body    = document.body;
+	var menuBtn = document.querySelector('#toggle-menu');
+	var content = document.querySelector('#content');
+
+	function toggleMenu(event) {
+		event.preventDefault();
+		event.stopPropagation();
+		body.classList.toggle('is-open');
+	}
+
+	function closeMenu() {
+		body.classList.remove('is-open');
+	}
+
+	menuBtn.addEventListener('click', toggleMenu);
+	content.addEventListener('click', closeMenu);
+})();
+</script>
+</body>
+</html>
