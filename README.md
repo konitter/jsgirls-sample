@@ -4,7 +4,7 @@
 
 ### ドロワーとは
 
-
+[ドロワーというナビゲーションの再考 | Reflection | UIデザイン会社Standard Incのブログ](http://www.standardinc.jp/reflection/article/rethink-the-ui-that-drawer/)
 
 ### コーディングパターン
 
@@ -53,6 +53,9 @@
 		- iPhoneやAndroidのwebkitでは、``touchend``してから``click``イベントが起きるまでに300ms程度の待ち時間がある
 		- その待ち時間では、ダブルタップによるズーム（一度画面から指を離してから、もう一度タップされるかどうか）の判定をしている
 		- つまり``click``イベントだとその待ち時間によってタッチデバイスではモッサリ（反応が鈍い）ように感じるため、タッチイベント（``touchstart``か``touchend``）を使う方がよい
+		- Chrome for Android 32、Firefox for Android 11ではviewportの設定で300msの遅延を防げるようになった
+			- 【参考】 [Chrome Developer Teamから学ぶサイトパフォーマンス](http://rochas.cc/blog/2013/12/09/frontrend.html#lesson5)
+			- このため、Googleの[Web Starter Kit](https://developers.google.com/web/starter-kit/)のドロワーの開閉には``click``イベントのみの設定になっている
 	- ``touchstart``と``touchend``どちらがいいのか問題
 		- コードでは``touchstart``でイベントが起きるようにしているが、それだとその要素がある場所（より画面の中央に近い位置など）によっては、ただ画面をスクロールしたいだけなのに、指を置いた場所に``touchstart``でイベントが起きる要素があると、スクロールできずにイベントが発火してしまい、ユーザーの意図した操作ができなくなってしまう
 		- 一方``touchend``にした場合、要素の外から指を動かしてきて、その要素の上で指を離すと``touchend``イベントが発火してしまう
