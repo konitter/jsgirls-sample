@@ -45,8 +45,10 @@
 	'use strict';
 
 	var body    = document.body;
-	var menuBtn = document.querySelector('#toggle-menu');
-	var content = document.querySelector('#content');
+	var menuBtn = document.getElementById('toggle-menu');
+	var content = document.getElementById('content');
+
+	var _touch = ('ontouchstart' in document) ? 'touchstart' : 'click';
 
 	function toggleMenu(event) {
 		event.preventDefault();
@@ -58,8 +60,8 @@
 		body.classList.remove('is-open');
 	}
 
-	menuBtn.addEventListener('click', toggleMenu);
-	content.addEventListener('click', closeMenu);
+	menuBtn.addEventListener(_touch, toggleMenu);
+	content.addEventListener(_touch, closeMenu);
 })();
 </script>
 </body>
